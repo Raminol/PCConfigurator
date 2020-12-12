@@ -6,7 +6,7 @@ namespace PCConfigurator
 {
     enum DDRType { DDR2, DDR3, DDR4 }
 
-    class RAM : Iproductinfo
+    class RAM : Component, Iproductinfo
     {
         int MHz {
             get => MHz;
@@ -14,19 +14,18 @@ namespace PCConfigurator
         }
         int MemorySize;
         DDRType Type;
-        ManufacturerInfo Manufacturer;
+   
        
         public RAM()
         {
 
         }
 
-        public RAM(int MHz, int MemorySize, DDRType Type, string Producer, string Name, int ReleaseYear)
+        public RAM(int MHz, int MemorySize, DDRType Type, string Producer, string Name, int ReleaseYear) : base(Producer, Name, ReleaseYear)
         {
             this.MHz = MHz;
             this.MemorySize = MemorySize;
             this.Type = Type;
-            this.Manufacturer = new ManufacturerInfo(Producer, Name, ReleaseYear);
         }
 
         public void About()

@@ -4,13 +4,12 @@ using System.Text;
 
 namespace PCConfigurator
 {
-    class Motherboard : Iproductinfo
+    class Motherboard : Component, Iproductinfo
     {
         CPU MyCPU;
         RAM [] MyRAM = new RAM[5];
         int RAMSlots = 1;
         FormFactor SomeFactor;
-        ManufacturerInfo Manufacturer;
 
     
         public Motherboard()
@@ -24,16 +23,14 @@ namespace PCConfigurator
             this.MyRAM = MyRAM;
             this.RAMSlots = RAMSlots;
             this.SomeFactor = SomeFactor;
-            this.Manufacturer = new ManufacturerInfo(null, null, 0);
         }
 
-        public Motherboard(CPU MyCPU, RAM [] MyRAM, int RAMSlots, FormFactor SomeFactor, string Producer, string Name, int ReleaseYear)
+        public Motherboard(CPU MyCPU, RAM [] MyRAM, int RAMSlots, FormFactor SomeFactor, string Producer, string Name, int ReleaseYear) : base (Producer, Name, ReleaseYear)
         {
             this.MyCPU = MyCPU;
             this.MyRAM = MyRAM;
             this.RAMSlots = RAMSlots;
             this.SomeFactor = SomeFactor;
-            this.Manufacturer = new ManufacturerInfo(Producer, Name, ReleaseYear);
         }
 
         public void About()

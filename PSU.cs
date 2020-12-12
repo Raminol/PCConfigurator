@@ -6,11 +6,11 @@ namespace PCConfigurator
 {
     enum Grade { Bronze, Silver, Gold, Platinum }
 
-    class PSU
+    class PSU : Component
     {
         int Power;
         Grade SomeGrade;
-        ManufacturerInfo Manufacturer;
+
 
         public PSU()
         {
@@ -21,14 +21,12 @@ namespace PCConfigurator
         {
             this.Power = Power;
             this.SomeGrade = SomeGrade;
-            this.Manufacturer = new ManufacturerInfo(null, null, 0);
         }
 
-        public PSU(int Power, Grade SomeGrade, string Producer, string Name, int ReleaseYear)
+        public PSU(int Power, Grade SomeGrade, string Producer, string Name, int ReleaseYear) : base(Producer, Name, ReleaseYear)
         {
             this.Power = Power;
             this.SomeGrade = SomeGrade;
-            this.Manufacturer = new ManufacturerInfo(Producer, Name, ReleaseYear);
         }
     }
 }

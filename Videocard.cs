@@ -4,26 +4,25 @@ using System.Text;
 
 namespace PCConfigurator
 {
-    class Videocard
+    class Videocard : Component
     {
         int Memory;
         int CoreSpeed;
         int MemorySpeed;
         int BUS;
-        ManufacturerInfo Manufacturer;
+
+
         public Videocard()
         {
 
         }
 
-        public Videocard(int Memory, int CoreSpeed, int MemorySpeed, int BUS, string Producer, string Name, int ReleaseYear)
+        public Videocard(int Memory, int CoreSpeed, int MemorySpeed, int BUS, string Producer, string Name, int ReleaseYear) : base(Producer, Name, ReleaseYear)
         {
             this.Memory = Memory;
             this.CoreSpeed = CoreSpeed;
             this.MemorySpeed = MemorySpeed;
             this.BUS = BUS;
-            this.Manufacturer = new ManufacturerInfo(Producer, Name, ReleaseYear);
-
         }
     }
 }

@@ -6,38 +6,38 @@ namespace PCConfigurator
 {
     enum CPUSocket { AM4, AM3, AM3Plus, FM2Plus, AM2, LGA1150, LGA1151, LGA1151v2, LGA1200, LGA2066 }
 
-    class CPU : Iproductinfo
+    class CPU : Component, Iproductinfo
     {
+        // fields
         double MHz;
         CPUSocket SomeSocket;
         int Cores;
         int CoresThread;
-        ManufacturerInfo Manufacturer;
 
 
+        // constructors
         public CPU()
         {
 
         }
 
-        public CPU(double MHz, CPUSocket SomeSocket, int Cores, int CoresThread)
+        public CPU(double MHz, CPUSocket SomeSocket, int Cores, int CoresThread) : base(null, null, 0)
         {
             this.MHz = MHz;
             this.SomeSocket = SomeSocket;
             this.Cores = Cores;
             this.CoresThread = CoresThread;
-            this.Manufacturer = new ManufacturerInfo(null, null, 0);
         }
 
-        public CPU(double MHz, CPUSocket SomeSocket, int Cores, int CoresThread, string Producer, string Name, int ReleaseYear)
+        public CPU(double MHz, CPUSocket SomeSocket, int Cores, int CoresThread, string Producer, string Name, int ReleaseYear) : base ( Producer, Name, ReleaseYear )
         {
             this.MHz = MHz < 0.0d ? 0.0d : MHz;
             this.SomeSocket = SomeSocket;
             this.Cores = Cores;
             this.CoresThread = CoresThread;
-            this.Manufacturer = new ManufacturerInfo(Producer, Name, ReleaseYear);
         }
 
+        // methods
         public void About()
         {
             Console.WriteLine("Тактовая частота: " + MHz);
