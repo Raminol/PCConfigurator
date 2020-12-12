@@ -4,31 +4,38 @@ using System.Text;
 
 namespace PCConfigurator
 {
-    enum CPUSocket { AM4, AM3, AM3Plus, AM2, LGA1150, LGA1151,LGA1170 }
+    enum CPUSocket { AM4, AM3, AM3Plus, FM2Plus, AM2, LGA1150, LGA1151, LGA1151v2, LGA1200, LGA2066 }
 
-    class CPU:Provider, Iproductinfo
+    class CPU : Iproductinfo
     {
         double MHz;
         CPUSocket SomeSocket;
         int Cores;
         int CoresThread;
+        ManufacurerInfo Manufacturer;
 
-
-        public string Producer { get; set; }
-        public string Name { get; set; }
 
         public CPU()
         {
 
         }
-        public CPU(double MHz, CPUSocket SomeSocket, int Cores, int CoresThread, string Producer, string Name)
+
+        public CPU(double MHz, CPUSocket SomeSocket, int Cores, int CoresThread)
         {
             this.MHz = MHz;
             this.SomeSocket = SomeSocket;
             this.Cores = Cores;
             this.CoresThread = CoresThread;
-            this.Producer = Producer;
-            this.Name = Name;
+            this.Manufacturer = new ManufacurerInfo(null, null, 0);
+        }
+
+        public CPU(double MHz, CPUSocket SomeSocket, int Cores, int CoresThread, string Producer, string Name, int ReleaseYear)
+        {
+            this.MHz = MHz < 0.0d ? 0.0d : MHz;
+            this.SomeSocket = SomeSocket;
+            this.Cores = Cores;
+            this.CoresThread = CoresThread;
+            this.Manufacturer = new ManufacurerInfo(Producer, Name, ReleaseYear);
         }
 
         public void About()
@@ -37,8 +44,7 @@ namespace PCConfigurator
             Console.WriteLine("Сокет: " + SomeSocket);
             Console.WriteLine("Количество ядер: "+ Cores);
             Console.WriteLine("Количество потоков: " + CoresThread);
-            Console.WriteLine("Производитель: " + Producer);
-            Console.WriteLine("Модель: " + Name);
+            Manufacturer.About();
         }
     }
 }

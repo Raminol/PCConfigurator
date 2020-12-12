@@ -5,25 +5,30 @@ using System.Text;
 namespace PCConfigurator
 {
     enum Grade { Bronze, Silver, Gold, Platinum }
-    class PSU:Provider
+
+    class PSU
     {
         int Power;
         Grade SomeGrade;
-
-        public string Producer { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        ManufacurerInfo Manufacturer;
 
         public PSU()
         {
 
         }
 
-        public PSU(int Power, Grade SomeGrade, string Producer, string Name)
+        public PSU(int Power, Grade SomeGrade)
         {
             this.Power = Power;
             this.SomeGrade = SomeGrade;
-            this.Producer = Producer;
-            this.Name = Name;
+            this.Manufacturer = new ManufacurerInfo(null, null, 0);
+        }
+
+        public PSU(int Power, Grade SomeGrade, string Producer, string Name, int ReleaseYear)
+        {
+            this.Power = Power;
+            this.SomeGrade = SomeGrade;
+            this.Manufacturer = new ManufacurerInfo(Producer, Name, ReleaseYear);
         }
     }
 }

@@ -4,29 +4,26 @@ using System.Text;
 
 namespace PCConfigurator
 {
-    class Videocard:Provider
+    class Videocard
     {
         int Memory;
         int CoreSpeed;
         int MemorySpeed;
         int BUS;
-
-        public string Producer { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
+        ManufacurerInfo Manufacturer;
         public Videocard()
         {
 
         }
 
-        public Videocard(int Memory, int CoreSpeed, int MemorySpeed, int BUS, string Producer, string Name)
+        public Videocard(int Memory, int CoreSpeed, int MemorySpeed, int BUS, string Producer, string Name, int ReleaseYear)
         {
             this.Memory = Memory;
             this.CoreSpeed = CoreSpeed;
             this.MemorySpeed = MemorySpeed;
             this.BUS = BUS;
-            this.Producer = Producer;
-            this.Name = Name;
+            this.Manufacturer = new ManufacurerInfo(Producer, Name, ReleaseYear);
+
         }
     }
 }
