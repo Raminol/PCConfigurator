@@ -10,7 +10,7 @@ namespace PCConfigurator
         RAM [] MyRAM = new RAM[5];
         int RAMSlots = 1;
         FormFactor SomeFactor;
-        ManufacurerInfo Manufacturer;
+        ManufacturerInfo Manufacturer;
 
     
         public Motherboard()
@@ -24,7 +24,7 @@ namespace PCConfigurator
             this.MyRAM = MyRAM;
             this.RAMSlots = RAMSlots;
             this.SomeFactor = SomeFactor;
-            this.Manufacturer = new ManufacurerInfo(null, null, 0);
+            this.Manufacturer = new ManufacturerInfo(null, null, 0);
         }
 
         public Motherboard(CPU MyCPU, RAM [] MyRAM, int RAMSlots, FormFactor SomeFactor, string Producer, string Name, int ReleaseYear)
@@ -33,7 +33,7 @@ namespace PCConfigurator
             this.MyRAM = MyRAM;
             this.RAMSlots = RAMSlots;
             this.SomeFactor = SomeFactor;
-            this.Manufacturer = new ManufacurerInfo(Producer, Name, ReleaseYear);
+            this.Manufacturer = new ManufacturerInfo(Producer, Name, ReleaseYear);
         }
 
         public void About()

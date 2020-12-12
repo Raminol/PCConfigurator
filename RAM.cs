@@ -14,7 +14,7 @@ namespace PCConfigurator
         }
         int MemorySize;
         DDRType Type;
-        ManufacurerInfo Manufacturer;
+        ManufacturerInfo Manufacturer;
        
         public RAM()
         {
@@ -26,7 +26,7 @@ namespace PCConfigurator
             this.MHz = MHz;
             this.MemorySize = MemorySize;
             this.Type = Type;
-            this.Manufacturer = new ManufacurerInfo(Producer, Name, ReleaseYear);
+            this.Manufacturer = new ManufacturerInfo(Producer, Name, ReleaseYear);
         }
 
         public void About()

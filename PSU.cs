@@ -10,7 +10,7 @@ namespace PCConfigurator
     {
         int Power;
         Grade SomeGrade;
-        ManufacurerInfo Manufacturer;
+        ManufacturerInfo Manufacturer;
 
         public PSU()
         {
@@ -21,14 +21,14 @@ namespace PCConfigurator
         {
             this.Power = Power;
             this.SomeGrade = SomeGrade;
-            this.Manufacturer = new ManufacurerInfo(null, null, 0);
+            this.Manufacturer = new ManufacturerInfo(null, null, 0);
         }
 
         public PSU(int Power, Grade SomeGrade, string Producer, string Name, int ReleaseYear)
         {
             this.Power = Power;
             this.SomeGrade = SomeGrade;
-            this.Manufacturer = new ManufacurerInfo(Producer, Name, ReleaseYear);
+            this.Manufacturer = new ManufacturerInfo(Producer, Name, ReleaseYear);
         }
     }
 }

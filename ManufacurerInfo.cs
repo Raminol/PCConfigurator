@@ -4,14 +4,14 @@ using System.Text;
 
 namespace PCConfigurator
 {
-    class ManufacurerInfo
+    class ManufacturerInfo
     {
         protected string Producer { get; }
         protected string Name { get; }
         protected int ReleaseYear { get; }
 
 
-        public ManufacurerInfo(string Producer, string Name, int ReleaseYear)
+        public ManufacturerInfo(string Producer, string Name, int ReleaseYear)
         {
             this.Producer = Producer ?? "Неизвестный производитель";
             this.Name = Name ?? "Неизвестное название";

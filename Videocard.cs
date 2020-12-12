@@ -10,7 +10,7 @@ namespace PCConfigurator
         int CoreSpeed;
         int MemorySpeed;
         int BUS;
-        ManufacurerInfo Manufacturer;
+        ManufacturerInfo Manufacturer;
         public Videocard()
         {
 
@@ -22,7 +22,7 @@ namespace PCConfigurator
             this.CoreSpeed = CoreSpeed;
             this.MemorySpeed = MemorySpeed;
             this.BUS = BUS;
-            this.Manufacturer = new ManufacurerInfo(Producer, Name, ReleaseYear);
+            this.Manufacturer = new ManufacturerInfo(Producer, Name, ReleaseYear);
 
         }
     }

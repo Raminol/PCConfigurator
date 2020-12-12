@@ -12,7 +12,7 @@ namespace PCConfigurator
         CPUSocket SomeSocket;
         int Cores;
         int CoresThread;
-        ManufacurerInfo Manufacturer;
+        ManufacturerInfo Manufacturer;
 
 
         public CPU()
@@ -26,7 +26,7 @@ namespace PCConfigurator
             this.SomeSocket = SomeSocket;
             this.Cores = Cores;
             this.CoresThread = CoresThread;
-            this.Manufacturer = new ManufacurerInfo(null, null, 0);
+            this.Manufacturer = new ManufacturerInfo(null, null, 0);
         }
 
         public CPU(double MHz, CPUSocket SomeSocket, int Cores, int CoresThread, string Producer, string Name, int ReleaseYear)
@@ -35,7 +35,7 @@ namespace PCConfigurator
             this.SomeSocket = SomeSocket;
             this.Cores = Cores;
             this.CoresThread = CoresThread;
-            this.Manufacturer = new ManufacurerInfo(Producer, Name, ReleaseYear);
+            this.Manufacturer = new ManufacturerInfo(Producer, Name, ReleaseYear);
         }
 
         public void About()
