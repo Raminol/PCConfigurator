@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PCConfigurator
 {
-    class Videocard : Component
+    class Videocard : Component, Iproductinfo
     {
         int Memory;
         int CoreSpeed;
@@ -23,6 +23,15 @@ namespace PCConfigurator
             this.CoreSpeed = CoreSpeed;
             this.MemorySpeed = MemorySpeed;
             this.BUS = BUS;
+        }
+
+        public void About()
+        {
+            Console.WriteLine("Количество памяти: " + Memory);
+            Console.WriteLine("Частота памяти: " + MemorySpeed);
+            Console.WriteLine("Частота ядра: " + CoreSpeed);
+            Console.WriteLine("Шина: " + BUS);
+            Manufacturer.About();
         }
     }
 }

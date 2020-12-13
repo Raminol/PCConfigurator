@@ -8,10 +8,7 @@ namespace PCConfigurator
 
     class RAM : Component, Iproductinfo
     {
-        int MHz {
-            get => MHz;
-            set { if (value < 0) { MHz = 0; } } 
-        }
+        int MHz; 
         int MemorySize;
         DDRType Type;
    

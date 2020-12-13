@@ -6,7 +6,7 @@ namespace PCConfigurator
 {
     enum Grade { Bronze, Silver, Gold, Platinum }
 
-    class PSU : Component
+    class PSU : Component, Iproductinfo
     {
         int Power;
         Grade SomeGrade;
@@ -27,6 +27,14 @@ namespace PCConfigurator
         {
             this.Power = Power;
             this.SomeGrade = SomeGrade;
+
+        }
+
+        public void About()
+        {
+            Console.WriteLine("Мощность: " + Power);
+            Console.WriteLine("Сертификат: " + SomeGrade);
+            Manufacturer.About();
         }
     }
 }

@@ -13,9 +13,9 @@ namespace PCConfigurator
         Videocard MyVideocard;
         FormFactor SomeFactor;
 
-        public SystemBlock() 
+        public SystemBlock(FormFactor formFactor) 
         {
-            // TODO
+            this.SomeFactor = formFactor;
         }
 
     }

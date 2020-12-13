@@ -10,37 +10,36 @@ namespace PCConfigurator
         RAM [] MyRAM = new RAM[5];
         int RAMSlots = 1;
         FormFactor SomeFactor;
-
+        DDRType dDRType;
+        CPUSocket SomeSocket;
     
         public Motherboard()
         {
 
         }
-
-        public Motherboard(CPU MyCPU, RAM[] MyRAM, int RAMSlots, FormFactor SomeFactor)
+    
+        public Motherboard(CPUSocket SomeSocket, int RAMSlots, FormFactor SomeFactor)
         {
-            this.MyCPU = MyCPU;
-            this.MyRAM = MyRAM;
+            this.SomeSocket = SomeSocket;
             this.RAMSlots = RAMSlots;
             this.SomeFactor = SomeFactor;
         }
 
-        public Motherboard(CPU MyCPU, RAM [] MyRAM, int RAMSlots, FormFactor SomeFactor, string Producer, string Name, int ReleaseYear) : base (Producer, Name, ReleaseYear)
+        public Motherboard(CPUSocket SomeSocket, int RAMSlots, FormFactor SomeFactor, DDRType dDRType, string Producer, string Name, int ReleaseYear) : base (Producer, Name, ReleaseYear)
         {
-            this.MyCPU = MyCPU;
-            this.MyRAM = MyRAM;
+            this.SomeSocket = SomeSocket;
             this.RAMSlots = RAMSlots;
             this.SomeFactor = SomeFactor;
+            this.dDRType = dDRType;
         }
 
         public void About()
         {
-            //Console.WriteLine("Установленный процессор: " + MyCPU..Name);
-            //Console.WriteLine("Сокет: " + SomeSocket);
-            //Console.WriteLine("Количество ядер: "+ Cores);
-            //Console.WriteLine("Количество потоков: " + CoresThread);
-            //Console.WriteLine("Производитель: " + Producer);
-            //Console.WriteLine("Модель: " + Name);
+            Console.WriteLine("Слотов оперативной памяти: "+ RAMSlots);
+            Console.WriteLine("Тип памяти:  " + dDRType);
+            Console.WriteLine("Сокет: " + SomeSocket);
+            Console.WriteLine("Форм фактор: " + SomeFactor);
+            Manufacturer.About();
         }
 
     }
