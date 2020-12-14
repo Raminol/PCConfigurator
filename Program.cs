@@ -63,7 +63,8 @@ namespace PCConfigurator
 
             if(ShopKey == ConsoleKey.D1)
             {
-                DNS.ShowCPULIST();
+                DNS.ShowLIST(DNS.CPULIST); // <=== вот это новое
+                //DNS.ShowCPULIST();
                 Console.Read();
             }
         }
