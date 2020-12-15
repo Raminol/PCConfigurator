@@ -10,7 +10,7 @@ namespace PCConfigurator
     {
         // fields
         double MHz;
-        CPUSocket SomeSocket;
+        public CPUSocket SomeSocket;
         int Cores;
         int CoresThread;
 

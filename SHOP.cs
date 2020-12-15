@@ -7,6 +7,11 @@ namespace PCConfigurator
     class SHOP
     {
         public CPU[] CPULIST = new CPU [5];
+        public Motherboard[] MotherList = new Motherboard[5];
+        public Videocard[] VideoList = new Videocard[5];
+        public RAM[] RAMList = new RAM[5];
+        public PSU[] PSUList = new PSU[5];
+        public SystemBlock[] BlockList = new SystemBlock[5];
 
 
 

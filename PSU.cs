@@ -17,7 +17,7 @@ namespace PCConfigurator
 
         }
 
-        public PSU(int Power, Grade SomeGrade)
+        public PSU(int Power, Grade SomeGrade) : base(null, null, 0)
         {
             this.Power = Power;
             this.SomeGrade = SomeGrade;

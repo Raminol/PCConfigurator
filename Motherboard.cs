@@ -11,18 +11,19 @@ namespace PCConfigurator
         int RAMSlots = 1;
         FormFactor SomeFactor;
         DDRType dDRType;
-        CPUSocket SomeSocket;
+        public CPUSocket SomeSocket;
     
         public Motherboard()
         {
 
         }
     
-        public Motherboard(CPUSocket SomeSocket, int RAMSlots, FormFactor SomeFactor)
+        public Motherboard(CPUSocket SomeSocket, int RAMSlots, FormFactor SomeFactor, DDRType dDRType) : base(null, null, 0)
         {
             this.SomeSocket = SomeSocket;
             this.RAMSlots = RAMSlots;
             this.SomeFactor = SomeFactor;
+            this.dDRType = dDRType;
         }
 
         public Motherboard(CPUSocket SomeSocket, int RAMSlots, FormFactor SomeFactor, DDRType dDRType, string Producer, string Name, int ReleaseYear) : base (Producer, Name, ReleaseYear)
