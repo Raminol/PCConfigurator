@@ -4,15 +4,48 @@ using System.Text;
 
 namespace PCConfigurator
 {
+
+    
+
     class SHOP
     {
-        public CPU[] CPULIST = new CPU [5];
-        public Motherboard[] MotherList = new Motherboard[5];
-        public Videocard[] VideoList = new Videocard[5];
-        public RAM[] RAMList = new RAM[5];
-        public PSU[] PSUList = new PSU[5];
-        public SystemBlock[] BlockList = new SystemBlock[5];
+        static readonly int MAXIMUM_ELEMENTS = 5;
 
+        public CPU[] CPULIST = new CPU [MAXIMUM_ELEMENTS];
+        public Motherboard[] MotherList = new Motherboard[MAXIMUM_ELEMENTS];
+        public Videocard[] VideoList = new Videocard[MAXIMUM_ELEMENTS];
+        public RAM[] RAMList = new RAM[MAXIMUM_ELEMENTS];
+        public PSU[] PSUList = new PSU[MAXIMUM_ELEMENTS];
+        public SystemBlock[] BlockList = new SystemBlock[MAXIMUM_ELEMENTS];
+
+
+
+        
+        /*
+        тут творится настоящая магия нахуй
+        */
+        public void AddNewComponent(Component new_component)
+        {
+            Component[] component_list;
+
+            if (new_component is CPU) { component_list = CPULIST; }
+            else if (new_component is Motherboard) { component_list = MotherList; }
+            else if (new_component is Videocard) { component_list = VideoList; }
+            else if (new_component is RAM) { component_list = RAMList; }
+            else if (new_component is PSU) { component_list = PSUList; }
+            else { component_list = BlockList; }
+
+
+            for (int index = 0; index < component_list.Length; index++)
+            {
+                if (component_list[index] == null)
+                {
+                    component_list[index] = new_component;
+                    break;
+                }
+            }
+
+        }
 
 
         /*
